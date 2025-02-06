@@ -1,0 +1,53 @@
+From 6e4c7fc12c67d981d1f8de3ffb55e006a32e22c2 Mon Sep 17 00:00:00 2001
+From: Lukas Janik <janik@acrios.com>
+Date: Thu, 6 Feb 2025 11:53:55 +0100
+Subject: [PATCH 2/3] pn5xx_i2c.c: Replace of_get_named_gpio_flags() for
+ of_get_named_gpio()
+
+---
+ pn5xx_i2c.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/pn5xx_i2c.c b/pn5xx_i2c.c
+index b3571a7..16471fa 100644
+--- a/pn5xx_i2c.c
++++ b/pn5xx_i2c.c
+@@ -421,7 +421,7 @@ static int pn54x_get_pdata(struct device *dev,
+ 	/* read the dev tree data */
+ 
+ 	/* ven pin - enable's power to the chip - REQUIRED */
+-	val = of_get_named_gpio_flags(node, "enable-gpios", 0, &flags);
++	val = of_get_named_gpio(node, "enable-gpios", 0);
+ 	if (val >= 0) {
+ 		pdata->ven_gpio = val;
+ 	}
+@@ -431,7 +431,7 @@ static int pn54x_get_pdata(struct device *dev,
+ 	}
+ 
+ 	/* firm pin - controls firmware download - OPTIONAL */
+-	val = of_get_named_gpio_flags(node, "firmware-gpios", 0, &flags);
++	val = of_get_named_gpio(node, "firmware-gpios", 0);
+ 	if (val >= 0) {
+ 		pdata->firm_gpio = val;
+ 	}
+@@ -441,7 +441,7 @@ static int pn54x_get_pdata(struct device *dev,
+ 	}
+ 
+ 	/* irq pin - data available irq - REQUIRED */
+-	val = of_get_named_gpio_flags(node, "interrupt-gpios", 0, &flags);
++	val = of_get_named_gpio(node, "interrupt-gpios", 0);
+ 	if (val >= 0) {
+ 		pdata->irq_gpio = val;
+ 	}
+@@ -451,7 +451,7 @@ static int pn54x_get_pdata(struct device *dev,
+ 	}
+ 
+ 	/* clkreq pin - controls the clock to the PN547 - OPTIONAL */
+-	val = of_get_named_gpio_flags(node, "nxp,pn54x-clkreq", 0, &flags);
++	val = of_get_named_gpio(node, "nxp,pn54x-clkreq", 0);
+ 	if (val >= 0) {
+ 		pdata->clkreq_gpio = val;
+ 	}
+-- 
+2.48.1
+
