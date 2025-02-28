@@ -13,7 +13,3 @@ SRCREV = "171a0d408812e3c882625f8f487bd521fd645e1e"
 inherit autotools pkgconfig lib_package
 
 S = "${WORKDIR}/git"
-
-# RDEPENDS on nxp-pn5xx kernel module
-RDEPENDS_${PN} = "kernel-module-nxp-pn5xx"
-
