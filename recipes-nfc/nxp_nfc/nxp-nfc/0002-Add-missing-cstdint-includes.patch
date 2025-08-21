@@ -1,0 +1,91 @@
+<<<<<<< HEAD
+From 1de79e4f079fe96aca31d1985eae9e0f3ad1170e Mon Sep 17 00:00:00 2001
+From: Lukas Janik <janik@acrios.com>
+Date: Fri, 28 Feb 2025 15:27:50 +0100
+Subject: [PATCH 3/6] Add missing cstdint includes
+=======
+From ba4fb15dba8f586caf4775b876f535ed9bb63ce1 Mon Sep 17 00:00:00 2001
+From: Lukas Janik <janik@acrios.com>
+Date: Fri, 28 Feb 2025 15:27:50 +0100
+Subject: [PATCH] Add missing cstdint includes
+>>>>>>> 64c56d3 (nxp-nfc: Checkout to NCI2.0_PN7160, add patches)
+
+---
+ src/nfcandroid_nfc_hidlimpl/halimpl/utils/NfccPowerTracker.h | 1 +
+ src/nfcandroid_nfc_hidlimpl/halimpl/utils/NxpNfcCapability.h | 2 ++
+ src/nxp_nci_hal_libnfc-nci/src/include/Nxp_Features.h        | 3 ++-
+ src/nxp_nci_hal_libnfc-nci/src/include/nfc_config.h          | 1 +
+ src/nxp_nci_hal_libnfc-nci/utils/include/config.h            | 1 +
+ 5 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NfccPowerTracker.h b/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NfccPowerTracker.h
+index 3b3e8c0..d0a09ec 100644
+--- a/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NfccPowerTracker.h
++++ b/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NfccPowerTracker.h
+@@ -17,6 +17,7 @@
+  ******************************************************************************/
+ #pragma once
+ 
++#include <cstdint>
+ #include <string>
+ #include <time.h>
+ #include <vector>
+diff --git a/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NxpNfcCapability.h b/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NxpNfcCapability.h
+index 1b23271..27a8609 100644
+--- a/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NxpNfcCapability.h
++++ b/src/nfcandroid_nfc_hidlimpl/halimpl/utils/NxpNfcCapability.h
+@@ -17,6 +17,8 @@
+  ******************************************************************************/
+ #ifndef __CAP_H__
+ #define __CAP_H__
++#include <cstdint>
++
+ #include "Nxp_Features.h"
+ #define pConfigFL (capability::getInstance())
+ 
+diff --git a/src/nxp_nci_hal_libnfc-nci/src/include/Nxp_Features.h b/src/nxp_nci_hal_libnfc-nci/src/include/Nxp_Features.h
+index b6741ad..e2c61cb 100644
+--- a/src/nxp_nci_hal_libnfc-nci/src/include/Nxp_Features.h
++++ b/src/nxp_nci_hal_libnfc-nci/src/include/Nxp_Features.h
+@@ -18,8 +18,9 @@
+ 
+ #ifndef NXP_FEATURES_H
+ #define NXP_FEATURES_H
+-#include <unistd.h>
++#include <cstdint>
+ #include <string>
++#include <unistd.h>
+ 
+ #define FW_MOBILE_MAJOR_NUMBER_PN553 0x01
+ #define FW_MOBILE_MAJOR_NUMBER_PN81A 0x02
+diff --git a/src/nxp_nci_hal_libnfc-nci/src/include/nfc_config.h b/src/nxp_nci_hal_libnfc-nci/src/include/nfc_config.h
+index dc1f1b1..c205e0d 100644
+--- a/src/nxp_nci_hal_libnfc-nci/src/include/nfc_config.h
++++ b/src/nxp_nci_hal_libnfc-nci/src/include/nfc_config.h
+@@ -34,6 +34,7 @@
+  ******************************************************************************/
+ #pragma once
+ 
++#include <cstdint>
+ #include <string>
+ #include <vector>
+ 
+diff --git a/src/nxp_nci_hal_libnfc-nci/utils/include/config.h b/src/nxp_nci_hal_libnfc-nci/utils/include/config.h
+index f4bcdec..7b928a2 100644
+--- a/src/nxp_nci_hal_libnfc-nci/utils/include/config.h
++++ b/src/nxp_nci_hal_libnfc-nci/utils/include/config.h
+@@ -15,6 +15,7 @@
+  */
+ #pragma once
+ 
++#include <cstdint>
+ #include <map>
+ #include <string>
+ #include <vector>
+-- 
+<<<<<<< HEAD
+2.50.1
+=======
+2.48.1
+>>>>>>> 64c56d3 (nxp-nfc: Checkout to NCI2.0_PN7160, add patches)
+
